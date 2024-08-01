@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ebalance</string>
+    <string name="home">Início</string>
+    <string name="sales">Vendas</string>
+    <string name="expenses">Despesas</string>
+    <string name="customers">Clientes</string>
+    <string name="receivers">Destinatários</string>
+    <string name="providers">Fornecedores</string>
+    <string name="menu">Menu</string>
+</resources>
