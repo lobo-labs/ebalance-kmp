@@ -1,4 +1,3 @@
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -33,6 +32,8 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(projects.shared)
+
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.7.0-alpha07")
         }
     }
 }
@@ -73,7 +74,11 @@ android {
         debugImplementation(compose.uiTooling)
 
         implementation(libs.koin)
-        implementation(libs.serialization.json)
+        implementation(libs.koin.compose)
+        implementation(libs.koin.compose.viewmodel)
+        implementation(libs.ktor.client)
+        implementation(libs.ktor.client.cio)
+        implementation(libs.ktor.client.okhttp)
 //        implementation(libs.ktorfit)
     }
 }

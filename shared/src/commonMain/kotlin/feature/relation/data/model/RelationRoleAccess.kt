@@ -1,0 +1,54 @@
+package feature.relation.data.model
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+enum class RelationRoleAccess {
+    COMPANY_ADD,
+    COMPANY_DELETE,
+    COMPANY_EDIT,
+    COMPANY_GET,
+
+    CUSTOMER_ADD,
+    CUSTOMER_DELETE,
+    CUSTOMER_EDIT,
+    CUSTOMER_GET,
+
+    EXPENSE_ADD,
+    EXPENSE_DELETE,
+    EXPENSE_EDIT,
+    EXPENSE_GET,
+
+    FINANCIAL_ADD,
+    FINANCIAL_DELETE,
+    FINANCIAL_EDIT,
+    FINANCIAL_GET,
+    FINANCIAL_VIEW,
+
+    PROVIDER_ADD,
+    PROVIDER_DELETE,
+    PROVIDER_EDIT,
+    PROVIDER_GET,
+
+    RECEIVER_ADD,
+    RECEIVER_DELETE,
+    RECEIVER_EDIT,
+    RECEIVER_GET,
+
+    SALE_ADD,
+    SALE_DELETE,
+    SALE_EDIT,
+    SALE_GET,
+
+    SEND_MESSAGE,
+
+    SERVICE_ADD,
+    SERVICE_DELETE,
+    SERVICE_EDIT,
+    SERVICE_GET,
+
+    USER_ADD,
+    USER_DELETE,
+    USER_EDIT,
+    USER_GET,
+}

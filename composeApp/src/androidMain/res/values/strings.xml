@@ -7,4 +7,6 @@
     <string name="receivers">Destinatários</string>
     <string name="providers">Fornecedores</string>
     <string name="menu">Menu</string>
+
+    <string name="sale_customer"><![CDATA[<b>Cliente:</b> %s]]></string>
 </resources>
