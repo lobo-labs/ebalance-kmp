@@ -13,14 +13,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import br.com.lobolabs.ebalance.core.presentation.util.navigation.NavigationItems
-import br.com.lobolabs.ebalance.core.presentation.util.navigation.NavigationMenus
+import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppScreens
+import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppRoutes
 
 @Composable
 fun AppBottomNavigation(
-    navigationItems: List<NavigationItems>,
-    selectedMenuItem: NavigationItems,
-    onMenuItemPressed: ((NavigationItems) -> Unit),
+    navigationItems: List<AppScreens>,
+    selectedMenuItem: AppScreens,
+    onMenuItemPressed: ((AppScreens) -> Unit),
     modifier: Modifier = Modifier
 ) {
     Column {
@@ -53,8 +53,8 @@ fun AppBottomNavigation(
 fun AppBottomNavigationPreview() {
     AppTheme {
         AppBottomNavigation(
-            selectedMenuItem = NavigationItems.Home(),
-            navigationItems = NavigationMenus.BottomNavigation().items,
+            selectedMenuItem = AppScreens.Home(),
+            navigationItems = AppRoutes.BottomNavigation().items,
             onMenuItemPressed = {}
         )
     }

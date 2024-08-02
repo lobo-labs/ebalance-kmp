@@ -7,9 +7,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
+import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppScreens
 import br.com.lobolabs.ebalance.feature.customer.CustomerScreen
 import br.com.lobolabs.ebalance.feature.expense.ExpenseScreen
-import br.com.lobolabs.ebalance.feature.home.HomeScreen
 import br.com.lobolabs.ebalance.feature.provider.ProviderScreen
 import br.com.lobolabs.ebalance.feature.receiver.ReceiverScreen
 import br.com.lobolabs.ebalance.feature.sale.SaleScreen
@@ -25,25 +25,28 @@ fun App(
             NavHost(
                 modifier = Modifier.padding(innerPadding),
                 navController = navController,
-                startDestination = ""
+                startDestination = AppScreens.Launcher().route
             ) {
-                composable("home") {
-                    HomeScreen()
+                composable(AppScreens.Launcher().route) {
+                    AppScreens.Launcher().screen
                 }
-                composable("sales") {
-                    SaleScreen()
+                composable(AppScreens.Home().route) {
+                    AppScreens.Home().screen
                 }
-                composable("expenses") {
-                    ExpenseScreen()
+                composable(AppScreens.Sales().route) {
+                    AppScreens.Sales().screen
                 }
-                composable("customers") {
-                    CustomerScreen()
+                composable(AppScreens.Expenses().route) {
+                    AppScreens.Sales().screen
                 }
-                composable("providers") {
-                    ProviderScreen()
+                composable(AppScreens.Customers().route) {
+                    AppScreens.Customers().screen
                 }
-                composable("receivers") {
-                    ReceiverScreen()
+                composable(AppScreens.Providers().route) {
+                    AppScreens.Providers().screen
+                }
+                composable(AppScreens.Receivers().route) {
+                    AppScreens.Receivers().route
                 }
             }
         }

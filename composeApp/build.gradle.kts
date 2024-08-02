@@ -27,7 +27,7 @@ kotlin {
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            implementation(compose.material3)
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
@@ -74,11 +74,14 @@ android {
         debugImplementation(compose.uiTooling)
 
         implementation(libs.koin)
-        implementation(libs.koin.compose)
-        implementation(libs.koin.compose.viewmodel)
+        // implementation(libs.koin.compose)
+        // implementation(libs.koin.compose.viewmodel)
         implementation(libs.ktor.client)
         implementation(libs.ktor.client.cio)
         implementation(libs.ktor.client.okhttp)
+        implementation(libs.ktor.client.content.negotiation)
+        implementation(libs.ktor.client.serialization)
+        implementation(libs.compottie)
 //        implementation(libs.ktorfit)
     }
 }

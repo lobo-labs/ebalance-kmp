@@ -9,7 +9,7 @@ import br.com.lobolabs.ebalance.feature.login.presentation.stateholder.SignInEve
 
 @Composable
 fun SignInScreen(
-    viewModel: SignInViewModel = koinV(SignInViewModel::class.java)
+    viewModel: SignInViewModel = viewModel(SignInViewModel::class.java)
 ) {
     val state = viewModel.state.collectAsState().value
     val effect = viewModel.effect.collectAsState(null).value

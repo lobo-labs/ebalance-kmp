@@ -17,13 +17,13 @@ import androidx.navigation.NavHostController
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.bottomnav.AppBottomNavigation
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.header.AppHeader
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import br.com.lobolabs.ebalance.core.presentation.util.navigation.NavigationItems
-import br.com.lobolabs.ebalance.core.presentation.util.navigation.NavigationMenus
+import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppScreens
+import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppRoutes
 import br.com.lobolabs.ebalance.feature.home.HomePage
 
 @Composable
 fun ContainerPage(
-    selectedItem: NavigationItems,
+    selectedItem: AppScreens,
     modifier: Modifier = Modifier,
     navController: NavHostController? = null,
 ) {
@@ -53,7 +53,7 @@ fun ContainerPage(
 
                 AppBottomNavigation(
                     selectedMenuItem = selectedItem,
-                    navigationItems = NavigationMenus.BottomNavigation().items,
+                    navigationItems = AppRoutes.BottomNavigation().items,
                     onMenuItemPressed = {
 
                     },
@@ -71,7 +71,7 @@ fun ContainerPage(
 fun ContainerPagePreview() {
     AppTheme {
         ContainerPage(
-            selectedItem = NavigationItems.Home()
+            selectedItem = AppScreens.Home()
         )
     }
 }
