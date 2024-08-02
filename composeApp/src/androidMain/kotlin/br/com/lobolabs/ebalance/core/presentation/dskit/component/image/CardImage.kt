@@ -6,8 +6,9 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,13 +31,14 @@ fun CardImage(
     Card(
         modifier = modifier,
         shape = RoundedCornerShape(14.dp),
-        backgroundColor = backgroundColor ?: MaterialTheme.colors.surface,
-        elevation = 0.dp
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+
+        elevation = CardDefaults.cardElevation(0.dp)
     ) {
         Image(
             modifier = Modifier.padding(10.dp),
             painter = painterResource(id = imageId),
-            colorFilter = ColorFilter.tint(color = imageColor ?: MaterialTheme.colors.secondary),
+            colorFilter = ColorFilter.tint(color = imageColor ?: MaterialTheme.colorScheme.secondary),
             contentDescription = ""
         )
     }

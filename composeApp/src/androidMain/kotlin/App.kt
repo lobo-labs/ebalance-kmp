@@ -1,5 +1,5 @@
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -8,11 +8,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppScreens
-import br.com.lobolabs.ebalance.feature.customer.CustomerScreen
-import br.com.lobolabs.ebalance.feature.expense.ExpenseScreen
-import br.com.lobolabs.ebalance.feature.provider.ProviderScreen
-import br.com.lobolabs.ebalance.feature.receiver.ReceiverScreen
-import br.com.lobolabs.ebalance.feature.sale.SaleScreen
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable

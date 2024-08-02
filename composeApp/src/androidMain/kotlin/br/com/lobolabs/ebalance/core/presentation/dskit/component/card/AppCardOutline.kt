@@ -5,16 +5,16 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 
-@OptIn(ExperimentalMaterialApi::class)
+
 @Composable
 fun AppCardOutline(
     modifier: Modifier = Modifier,
@@ -24,14 +24,14 @@ fun AppCardOutline(
 ) {
     Card(
         modifier = modifier,
-        backgroundColor = MaterialTheme.colors.background,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background),
         border = BorderStroke(
             width = 2.dp,
-            color = MaterialTheme.colors.secondary.takeIf {
+            color = MaterialTheme.colorScheme.secondary.takeIf {
                 isSelected
-            } ?: MaterialTheme.colors.surface
+            } ?: MaterialTheme.colorScheme.surface
         ),
-        elevation = 0.dp,
+        elevation = CardDefaults.cardElevation(0.dp),
         shape = RoundedCornerShape(14.dp),
         onClick = { onClick() }
     ) {

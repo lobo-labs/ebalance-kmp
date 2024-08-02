@@ -8,9 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.FloatingActionButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -37,7 +37,7 @@ fun SaleListPage(
                 Image(
                     painter = painterResource(id = R.drawable.ic_add),
                     contentDescription = "",
-                    colorFilter = ColorFilter.tint(color = MaterialTheme.colors.onSecondary)
+                    colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.onSecondary)
                 )
             }
         }
@@ -45,7 +45,7 @@ fun SaleListPage(
         LazyColumn(
             modifier = modifier
                 .padding(it)
-                .background(color = MaterialTheme.colors.background)
+                .background(color = MaterialTheme.colorScheme.background)
                 .fillMaxSize()
                 .padding(start = 8.dp, end = 8.dp, top = 8.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)

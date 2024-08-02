@@ -9,8 +9,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -26,7 +26,7 @@ fun AppHeader(
 ) {
     Column(
         modifier = modifier
-            .background(MaterialTheme.colors.background)
+            .background(MaterialTheme.colorScheme.background)
             .fillMaxWidth()
     ) {
         Row(
@@ -37,10 +37,10 @@ fun AppHeader(
                 modifier = Modifier.padding(16.dp).size(32.dp),
                 painter = painterResource(id = R.drawable.ic_ebalance),
                 contentDescription = "",
-                colorFilter = ColorFilter.tint(MaterialTheme.colors.primary)
+                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
             )
         }
-        Divider(color = MaterialTheme.colors.surface)
+        Divider(color = MaterialTheme.colorScheme.surface)
     }
 }
 

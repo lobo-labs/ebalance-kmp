@@ -5,8 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -21,7 +20,7 @@ import sale.SaleFactory
 import sale.domain.Sale
 import java.text.NumberFormat
 
-@OptIn(ExperimentalMaterialApi::class)
+
 @Composable
 fun SaleListItem(
     modifier: Modifier = Modifier,
@@ -52,12 +51,12 @@ fun SaleListItem(
                     AppSubtitleText(
                         text = "Cliente:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(end = 8.dp, bottom = 0.dp)
                     )
                     AppSubtitleText(
                         text = sale.customer?.name ?: "Não identificado",
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp)
@@ -70,12 +69,12 @@ fun SaleListItem(
                         AppSubtitleText(
                             text = "Destinatário:",
                             isBold = true,
-                            textColor = MaterialTheme.colors.onBackground,
+                            textColor = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.padding(end = 8.dp, top = 8.dp)
                         )
                         AppSubtitleText(
                             text = receiver.name,
-                            textColor = MaterialTheme.colors.onBackground,
+                            textColor = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(start = 4.dp, top = 8.dp)
@@ -88,12 +87,12 @@ fun SaleListItem(
                     AppSubtitleText(
                         text = "Entrada:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(end = 8.dp, top = 8.dp)
                     )
                     AppSubtitleText(
                         text = sale.entryDate,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, top = 8.dp)
@@ -105,12 +104,12 @@ fun SaleListItem(
                     AppSubtitleText(
                         text = "Vencimento:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(end = 8.dp, top = 8.dp)
                     )
                     AppSubtitleText(
                         text = sale.finishDate,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, top = 8.dp)
@@ -122,13 +121,13 @@ fun SaleListItem(
                     AppSubtitleText(
                         text = "À receber:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.secondary,
+                        textColor = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(end = 8.dp, top = 8.dp)
                     )
                     AppSubtitleText(
                         text = NumberFormat.getCurrencyInstance().format(sale.toReceive),
                         isBold = true,
-                        textColor = MaterialTheme.colors.secondary,
+                        textColor = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, top = 8.dp)

@@ -1,8 +1,8 @@
 package br.com.lobolabs.ebalance.core.presentation.dskit.component.text
 
 import android.content.res.Configuration
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -20,7 +20,7 @@ fun AppTitleText(
         text = text.buildHtmlText(),
         fontSize = 24.sp,
         fontWeight = FontWeight.Bold,
-        color = MaterialTheme.colors.primary,
+        color = MaterialTheme.colorScheme.primary,
         modifier = modifier
     )
 }

@@ -7,9 +7,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,7 +21,7 @@ import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 import customer.CustomerFactory
 import customer.domain.Customer
 
-@OptIn(ExperimentalMaterialApi::class)
+
 @Composable
 fun CustomerListItem(
     modifier: Modifier = Modifier,
@@ -31,14 +31,14 @@ fun CustomerListItem(
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        backgroundColor = MaterialTheme.colors.background,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background),
         border = BorderStroke(
             width = 2.dp,
-            color = MaterialTheme.colors.secondary.takeIf {
+            color = MaterialTheme.colorScheme.secondary.takeIf {
                 isSelected
-            } ?: MaterialTheme.colors.surface
+            } ?: MaterialTheme.colorScheme.surface
         ),
-        elevation = 0.dp,
+        elevation = CardDefaults.cardElevation(0.dp),
         shape = RoundedCornerShape(14.dp),
         onClick = { onItemClick(customer) }
     ) {
@@ -59,7 +59,7 @@ fun CustomerListItem(
                 AppSubtitleText(
                     text = customer.name,
                     isBold = true,
-                    textColor = MaterialTheme.colors.primary,
+                    textColor = MaterialTheme.colorScheme.primary,
                     modifier = Modifier.padding(end = 8.dp, top = 8.dp)
                 )
                 AppSubtitleText(

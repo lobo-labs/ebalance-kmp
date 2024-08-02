@@ -14,7 +14,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,7 +38,7 @@ fun HomePage(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background)
+            .background(MaterialTheme.colorScheme.background)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -83,7 +83,7 @@ fun HomePage(
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colors.primary
+                            textColor = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -101,7 +101,7 @@ fun HomePage(
                 ) {
                     CardImage(
                         imageId = R.drawable.ic_cash_out,
-                        imageColor = MaterialTheme.colors.error
+                        imageColor = MaterialTheme.colorScheme.error
                     )
                     Column(
                         modifier = Modifier
@@ -111,7 +111,7 @@ fun HomePage(
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colors.primary
+                            textColor = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -146,7 +146,7 @@ fun HomePage(
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colors.primary
+                            textColor = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -164,7 +164,7 @@ fun HomePage(
                 ) {
                     CardImage(
                         imageId = R.drawable.ic_cash_out,
-                        imageColor = MaterialTheme.colors.error
+                        imageColor = MaterialTheme.colorScheme.error
                     )
                     Column(
                         modifier = Modifier
@@ -174,7 +174,7 @@ fun HomePage(
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colors.primary
+                            textColor = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -209,7 +209,7 @@ fun HomePage(
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colors.primary
+                            textColor = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -234,7 +234,7 @@ fun HomePage(
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colors.primary
+                            textColor = MaterialTheme.colorScheme.primary
                         )
                     }
                 }
@@ -267,14 +267,14 @@ fun HomePage(
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.ic_add_square),
-                        colorFilter = ColorFilter.tint(color = MaterialTheme.colors.onPrimary),
+                        colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.onPrimary),
                         contentDescription = "",
                         modifier = Modifier.size(32.dp)
                     )
                     AppSubtitleText(
                         text = "Adicionar<br>Novo item",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onPrimary,
+                        textColor = MaterialTheme.colorScheme.onPrimary,
                         modifier = Modifier.padding(top = 16.dp),
                     )
                 }
@@ -295,14 +295,14 @@ fun HomePage(
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.ic_user),
-                        colorFilter = ColorFilter.tint(color = MaterialTheme.colors.secondary),
+                        colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
                         contentDescription = "",
                         modifier = Modifier.size(32.dp)
                     )
                     AppSubtitleText(
                         text = "Gerenciar<br>Clientes",
                         isBold = true,
-                        textColor = MaterialTheme.colors.primary,
+                        textColor = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.padding(top = 16.dp),
                     )
                 }
@@ -323,14 +323,14 @@ fun HomePage(
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.ic_user_group),
-                        colorFilter = ColorFilter.tint(color = MaterialTheme.colors.secondary),
+                        colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
                         contentDescription = "",
                         modifier = Modifier.size(32.dp)
                     )
                     AppSubtitleText(
                         text = "Gerenciar<br>Destinatários",
                         isBold = true,
-                        textColor = MaterialTheme.colors.primary,
+                        textColor = MaterialTheme.colorScheme.primary,
                         modifier = Modifier.padding(top = 16.dp),
                     )
                 }

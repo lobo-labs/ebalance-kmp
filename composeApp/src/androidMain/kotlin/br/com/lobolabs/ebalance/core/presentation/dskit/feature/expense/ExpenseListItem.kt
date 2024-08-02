@@ -8,9 +8,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -24,7 +24,7 @@ import sale.SaleFactory
 import sale.domain.Sale
 import java.text.NumberFormat
 
-@OptIn(ExperimentalMaterialApi::class)
+
 @Composable
 fun ExpenseListItem(
     modifier: Modifier = Modifier,
@@ -34,14 +34,14 @@ fun ExpenseListItem(
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
-        backgroundColor = MaterialTheme.colors.background,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background),
         border = BorderStroke(
             width = 2.dp,
-            color = MaterialTheme.colors.secondary.takeIf {
+            color = MaterialTheme.colorScheme.secondary.takeIf {
                 isSelected
-            } ?: MaterialTheme.colors.surface
+            } ?: MaterialTheme.colorScheme.surface
         ),
-        elevation = 0.dp,
+        elevation = CardDefaults.cardElevation(0.dp),
         shape = RoundedCornerShape(14.dp),
         onClick = { onItemClick(expense) }
     ) {
@@ -51,13 +51,14 @@ fun ExpenseListItem(
             Card(
                 modifier = Modifier.padding(start = 16.dp, top = 16.dp),
                 shape = RoundedCornerShape(10.dp),
-                backgroundColor = MaterialTheme.colors.surface,
-                elevation = 0.dp
+
+                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+                elevation = CardDefaults.cardElevation(0.dp)
             ) {
                 Image(
                     modifier = Modifier.padding(14.dp),
                     painter = painterResource(id = R.drawable.ic_cash_in),
-                    colorFilter = ColorFilter.tint(color = MaterialTheme.colors.secondary),
+                    colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
                     contentDescription = ""
                 )
             }
@@ -72,7 +73,7 @@ fun ExpenseListItem(
                     AppSubtitleText(
                         text = "Cliente:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(
                             start = 8.dp,
                             end = 8.dp,
@@ -82,7 +83,7 @@ fun ExpenseListItem(
                     )
                     AppSubtitleText(
                         text = expense.customer?.name ?: "Não identificado",
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, end = 8.dp, top = 8.dp)
@@ -95,12 +96,12 @@ fun ExpenseListItem(
                         AppSubtitleText(
                             text = "Destinatário:",
                             isBold = true,
-                            textColor = MaterialTheme.colors.onBackground,
+                            textColor = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
                         )
                         AppSubtitleText(
                             text = receiver.name,
-                            textColor = MaterialTheme.colors.onBackground,
+                            textColor = MaterialTheme.colorScheme.onBackground,
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(start = 4.dp, end = 8.dp, top = 8.dp)
@@ -113,12 +114,12 @@ fun ExpenseListItem(
                     AppSubtitleText(
                         text = "Entrada:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
                     )
                     AppSubtitleText(
                         text = expense.entryDate,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, end = 8.dp, top = 8.dp)
@@ -130,12 +131,12 @@ fun ExpenseListItem(
                     AppSubtitleText(
                         text = "Vencimento:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
                     )
                     AppSubtitleText(
                         text = expense.finishDate,
-                        textColor = MaterialTheme.colors.onBackground,
+                        textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, end = 8.dp, top = 8.dp)
@@ -147,13 +148,13 @@ fun ExpenseListItem(
                     AppSubtitleText(
                         text = "À receber:",
                         isBold = true,
-                        textColor = MaterialTheme.colors.secondary,
+                        textColor = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
                     )
                     AppSubtitleText(
                         text = NumberFormat.getCurrencyInstance().format(expense.toReceive),
                         isBold = true,
-                        textColor = MaterialTheme.colors.secondary,
+                        textColor = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 4.dp, end = 8.dp, top = 8.dp)

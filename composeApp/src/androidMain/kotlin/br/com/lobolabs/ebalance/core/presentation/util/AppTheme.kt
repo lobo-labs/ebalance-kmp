@@ -2,20 +2,16 @@ package br.com.lobolabs.ebalance.core.presentation.util
 
 import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Typography
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
 import androidx.core.view.WindowCompat
-import br.com.lobolabs.ebalance.R
 
-private val darkColorScheme = darkColors(
+private val darkColorScheme = darkColorScheme(
     primary = AppColors.Common.White,
     onPrimary = AppColors.Green.Dark,
     secondary = AppColors.Green.Color,
@@ -28,7 +24,7 @@ private val darkColorScheme = darkColors(
     onError = AppColors.Common.White
 )
 
-private val lightColorScheme = lightColors(
+private val lightColorScheme = lightColorScheme(
     primary = AppColors.Green.Dark,
     onPrimary = AppColors.Common.White,
     secondary = AppColors.Green.Color,
@@ -66,10 +62,10 @@ fun AppTheme(
     }
 
     MaterialTheme(
-        colors = colorScheme,
-         typography = Typography(
-             defaultFontFamily = FontFamily(Font(resId = R.font.nexa))
-         ),
+        colorScheme = colorScheme,
+//         typography = Typography(
+//             defaultFontFamily = FontFamily(Font(resId = R.font.nexa))
+//         ),
         content = content
     )
 }

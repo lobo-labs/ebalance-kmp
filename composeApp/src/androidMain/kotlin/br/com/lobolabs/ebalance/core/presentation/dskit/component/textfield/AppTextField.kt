@@ -4,11 +4,12 @@ import android.content.res.Configuration
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedTextField
-import androidx.compose.material.Text
-import androidx.compose.material.TextFieldDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -39,11 +40,16 @@ fun AppTextField(
         modifier = modifier.onFocusChanged { isFocused = it.isFocused },
         visualTransformation = if (isPasswordTextField && isPasswordVisible.not()) PasswordVisualTransformation() else VisualTransformation.None,
         shape = RoundedCornerShape(16.dp),
-        colors = TextFieldDefaults.outlinedTextFieldColors(
-            backgroundColor = MaterialTheme.colors.surface,
-            textColor = MaterialTheme.colors.onSurface,
-            focusedBorderColor = Color.Transparent,
-            unfocusedBorderColor = Color.Transparent
+        colors = OutlinedTextFieldDefaults.colors(
+            focusedContainerColor = MaterialTheme.colorScheme.surface,
+            unfocusedContainerColor = MaterialTheme.colorScheme.surface,
+            focusedBorderColor = MaterialTheme.colorScheme.surface,
+            unfocusedBorderColor = MaterialTheme.colorScheme.surface,
+            // focusedTextColor = MaterialTheme.colorScheme.surface
+//            containerColor = MaterialTheme.colorScheme.surface,
+//            textColor = MaterialTheme.colorScheme.onSurface,
+//            focusedBorderColor = Color.Transparent,
+//            unfocusedBorderColor = Color.Transparent
         ),
         placeholder = {
             Text(text = hint)
@@ -62,7 +68,7 @@ fun AppTextField(
                         .clickable {
                             isPasswordVisible = isPasswordVisible.not()
                         },
-                    tint = MaterialTheme.colors.onSurface
+                    tint = MaterialTheme.colorScheme.onSurface
                 )
             }
         }

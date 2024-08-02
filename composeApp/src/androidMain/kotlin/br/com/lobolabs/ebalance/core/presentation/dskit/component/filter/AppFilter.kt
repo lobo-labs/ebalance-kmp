@@ -8,9 +8,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Card
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.MaterialTheme
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
@@ -21,7 +21,7 @@ import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.text.AppSubtitleText
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 
-@OptIn(ExperimentalMaterialApi::class)
+
 @Composable
 fun AppFilter(
     text: String,
@@ -30,9 +30,9 @@ fun AppFilter(
 ) {
     Card(
         modifier = modifier,
-        backgroundColor = MaterialTheme.colors.background,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.background),
         shape = CircleShape,
-        border = BorderStroke(1.dp, color = MaterialTheme.colors.surface),
+        border = BorderStroke(1.dp, color = MaterialTheme.colorScheme.surface),
         onClick = onItemChanged
 
     ) {
@@ -42,11 +42,11 @@ fun AppFilter(
         ) {
             AppSubtitleText(
                 text = text,
-                textColor = MaterialTheme.colors.primary
+                textColor = MaterialTheme.colorScheme.primary
             )
             Image(
                 modifier = Modifier.size(20.dp),
-                colorFilter = ColorFilter.tint(color = MaterialTheme.colors.secondary),
+                colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
                 painter = painterResource(id = R.drawable.ic_expand),
                 contentDescription = ""
             )

@@ -7,8 +7,8 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.text.style.UnderlineSpan
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,7 +30,7 @@ import br.com.lobolabs.ebalance.core.presentation.util.ktx.buildHtmlText
 fun AppSubtitleText(
     text: String,
     modifier: Modifier = Modifier,
-    textColor: Color = MaterialTheme.colors.onBackground,
+    textColor: Color = MaterialTheme.colorScheme.onBackground,
     isBold: Boolean = false,
     striped: Boolean = false,
 ) {

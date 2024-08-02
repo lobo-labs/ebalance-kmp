@@ -4,10 +4,10 @@ import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,23 +23,23 @@ fun AppSecondaryButton(
     modifier: Modifier = Modifier
 ) {
     Button(
-        elevation = ButtonDefaults.elevation(0.dp),
+        elevation = ButtonDefaults.elevatedButtonElevation(0.dp),
         modifier = modifier,
         onClick = {
             onButtonClick.invoke()
         },
         shape = RoundedCornerShape(16.dp),
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color.Transparent,
+            containerColor = Color.Transparent,
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = MaterialTheme.colors.onBackground
+            color = MaterialTheme.colorScheme.onBackground
         )
     ) {
         Text(
             text = text,
-            color = MaterialTheme.colors.primary,
+            color = MaterialTheme.colorScheme.primary,
             fontSize = 18.sp,
             modifier = Modifier.padding(8.dp)
         )
