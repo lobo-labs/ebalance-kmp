@@ -5,8 +5,8 @@ import br.com.lobolabs.ebalance.core.data.ktx.formattedPhone
 import br.com.lobolabs.ebalance.feature.relation.data.database.CompanyUserRelationDao
 import br.com.lobolabs.ebalance.feature.user.data.database.UserDao
 import feature.relation.data.model.RelationType
-import user.data.model.UserResponse
-import user.data.model.response.CompanyUserResponse
+import feature.user.data.response.UserResponse
+import feature.user.data.response.CompanyUserResponse
 
 //class UserMapper: Mapper<UserDao, UserResponse>() {
 //

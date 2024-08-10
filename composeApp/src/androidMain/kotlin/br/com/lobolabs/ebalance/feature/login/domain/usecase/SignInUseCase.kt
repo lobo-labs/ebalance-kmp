@@ -1,16 +1,15 @@
 package br.com.lobolabs.ebalance.feature.login.domain.usecase
 
 import br.com.lobolabs.ebalance.feature.login.domain.SignInRepository
-import feature.auth.domain.SignInResult
+import feature.auth.domain.model.SignInModel
 import feature.auth.domain.mapper.SignInMapper
-import feature.auth.domain.mapper.SignInMapperImpl
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
 
 interface SignInUseCase {
-    suspend operator fun invoke(email: String, password: String): Flow<SignInResult>
+    suspend operator fun invoke(email: String, password: String): Flow<SignInModel>
 }
 
 class SignInUseCaseImpl(

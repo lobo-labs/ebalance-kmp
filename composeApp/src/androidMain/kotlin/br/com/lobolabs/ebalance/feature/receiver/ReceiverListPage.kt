@@ -14,8 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.core.presentation.dskit.feature.receiver.ReceiverListItem
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import receiver.ReceiverFactory
-import receiver.domain.Receiver
+import feature.receiver.ReceiverFactory
+import feature.receiver.domain.Receiver
 
 @Composable
 fun ReceiverListPage(

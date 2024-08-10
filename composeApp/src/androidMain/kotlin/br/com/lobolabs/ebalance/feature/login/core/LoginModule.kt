@@ -7,9 +7,6 @@ import br.com.lobolabs.ebalance.feature.login.data.repository.SignInRepositoryIm
 import br.com.lobolabs.ebalance.feature.login.domain.SignInRepository
 import br.com.lobolabs.ebalance.feature.login.domain.usecase.SignInUseCase
 import br.com.lobolabs.ebalance.feature.login.domain.usecase.SignInUseCaseImpl
-import core.mapper.Mapper
-import feature.auth.data.response.SignInResponse
-import feature.auth.domain.SignInResult
 import feature.auth.domain.mapper.SignInMapper
 import feature.auth.domain.mapper.SignInMapperImpl
 import org.koin.core.qualifier.named

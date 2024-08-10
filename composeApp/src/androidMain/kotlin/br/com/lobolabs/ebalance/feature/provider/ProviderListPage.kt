@@ -15,12 +15,12 @@ import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.core.presentation.dskit.feature.provider.ProviderListItem
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 import feature.provider.ProviderFactory
-import feature.provider.domain.Provider
+import feature.provider.domain.ProviderModel
 
 @Composable
 fun ProviderListPage(
-    providers: List<Provider>,
-    onItemClick: (Provider) -> Unit,
+    providers: List<ProviderModel>,
+    onItemClick: (ProviderModel) -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(

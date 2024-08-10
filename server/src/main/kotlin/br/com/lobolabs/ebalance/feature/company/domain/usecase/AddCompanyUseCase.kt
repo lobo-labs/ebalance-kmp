@@ -2,20 +2,20 @@ package br.com.lobolabs.ebalance.feature.company.domain.usecase
 
 import br.com.lobolabs.ebalance.feature.company.CompanyDao
 import br.com.lobolabs.ebalance.feature.company.domain.repository.CompanyRepository
-import company.data.CompanyRequest
+import feature.company.data.CreateCompanyRequest
 import core.ApiStatus
 import core.AppError
 import core.AppErrorCode
 import io.ktor.http.HttpStatusCode
 
 interface AddCompanyUseCase {
-    suspend fun execute(request: CompanyRequest): ApiStatus<CompanyDao>
+    suspend fun execute(request: CreateCompanyRequest): ApiStatus<CompanyDao>
 }
 
 class AddCompanyUseCaseImpl(
     private val companyRepository: CompanyRepository
 ) : AddCompanyUseCase {
-    override suspend fun execute(request: CompanyRequest): ApiStatus<CompanyDao> {
+    override suspend fun execute(request: CreateCompanyRequest): ApiStatus<CompanyDao> {
         try {
             val companyId = companyRepository.create(request)
             val companyDao = companyRepository.getById(companyId) ?: run {

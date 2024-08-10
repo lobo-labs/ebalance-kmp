@@ -20,17 +20,17 @@ import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.text.AppSubtitleText
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import sale.SaleFactory
-import sale.domain.Sale
+import feature.expense.ExpenseFactory
+import feature.expense.domain.ExpenseModel
 import java.text.NumberFormat
 
 
 @Composable
 fun ExpenseListItem(
     modifier: Modifier = Modifier,
-    onItemClick: (Sale) -> Unit,
+    onItemClick: (ExpenseModel) -> Unit,
     isSelected: Boolean = false,
-    expense: Sale
+    expense: ExpenseModel
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),
@@ -57,8 +57,8 @@ fun ExpenseListItem(
             ) {
                 Image(
                     modifier = Modifier.padding(14.dp),
-                    painter = painterResource(id = R.drawable.ic_cash_in),
-                    colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
+                    painter = painterResource(id = R.drawable.ic_cash_out),
+                    colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.error),
                     contentDescription = ""
                 )
             }
@@ -67,108 +67,63 @@ fun ExpenseListItem(
                     .fillMaxWidth()
                     .padding(start = 8.dp, end = 8.dp, top = 8.dp, bottom = 16.dp)
             ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    AppSubtitleText(
-                        text = "Cliente:",
-                        isBold = true,
-                        textColor = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.padding(
+
+                AppSubtitleText(
+                    text = "<b>Descrição:</b> ${expense.description}",
+                    textColor = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(
                             start = 8.dp,
-                            end = 8.dp,
                             top = 8.dp,
                             bottom = 0.dp
                         )
-                    )
+                )
+
+                expense.provider?.let { provider ->
                     AppSubtitleText(
-                        text = expense.customer?.name ?: "Não identificado",
+                        text = "<b>Fornecedor:</b> ${provider.name}",
                         textColor = MaterialTheme.colorScheme.onBackground,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(start = 4.dp, end = 8.dp, top = 8.dp)
+                            .padding(start = 8.dp, top = 8.dp)
                     )
                 }
-                expense.receiver?.let { receiver ->
-                    Row(
-                        modifier = Modifier.fillMaxWidth()
-                    ) {
-                        AppSubtitleText(
-                            text = "Destinatário:",
-                            isBold = true,
-                            textColor = MaterialTheme.colorScheme.onBackground,
-                            modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
-                        )
-                        AppSubtitleText(
-                            text = receiver.name,
-                            textColor = MaterialTheme.colorScheme.onBackground,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(start = 4.dp, end = 8.dp, top = 8.dp)
-                        )
-                    }
-                }
-                Row(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
+
+                AppSubtitleText(
+                    text = "<b>Entrada:</b> ${expense.entryDate}",
+                    textColor = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 8.dp, top = 8.dp)
+                )
+
+                AppSubtitleText(
+                    text = "<b>Vencimento:</b> ${expense.finishDate}",
+                    textColor = MaterialTheme.colorScheme.onBackground,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 8.dp, top = 8.dp)
+                )
+
+                AppSubtitleText(
+                    text = "<b>À pagar: ${
+                        NumberFormat.getCurrencyInstance().format(expense.toPay)
+                    }</b>",
+                    textColor = MaterialTheme.colorScheme.error,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(start = 8.dp, top = 8.dp)
+                )
+                if (expense.toPay != expense.value) {
                     AppSubtitleText(
-                        text = "Entrada:",
-                        isBold = true,
-                        textColor = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
-                    )
-                    AppSubtitleText(
-                        text = expense.entryDate,
-                        textColor = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 4.dp, end = 8.dp, top = 8.dp)
-                    )
-                }
-                Row(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    AppSubtitleText(
-                        text = "Vencimento:",
-                        isBold = true,
-                        textColor = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
-                    )
-                    AppSubtitleText(
-                        text = expense.finishDate,
-                        textColor = MaterialTheme.colorScheme.onBackground,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 4.dp, end = 8.dp, top = 8.dp)
-                    )
-                }
-                Row(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    AppSubtitleText(
-                        text = "À receber:",
-                        isBold = true,
-                        textColor = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier.padding(start = 8.dp, end = 8.dp, top = 8.dp)
-                    )
-                    AppSubtitleText(
-                        text = NumberFormat.getCurrencyInstance().format(expense.toReceive),
-                        isBold = true,
-                        textColor = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(start = 4.dp, end = 8.dp, top = 8.dp)
-                    )
-                }
-                if (expense.toReceive != expense.total) {
-                    AppSubtitleText(
-                        text = "Recebido: ${
-                            NumberFormat.getCurrencyInstance().format(expense.cashIn)
+                        text = "Pago: ${
+                            NumberFormat.getCurrencyInstance().format(expense.cashOut)
                         }",
                         striped = true,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(start = 8.dp, end = 8.dp, top = 8.dp)
+                            .padding(start = 8.dp, top = 8.dp)
                     )
                 }
             }
@@ -182,7 +137,7 @@ fun ExpenseListItem(
 fun ExpenseListItemPreview() {
     AppTheme {
         ExpenseListItem(
-            expense = SaleFactory.getSale(1L),
+            expense = ExpenseFactory.getExpense(1L),
             onItemClick = {}
         )
     }

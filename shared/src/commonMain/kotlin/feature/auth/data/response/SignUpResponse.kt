@@ -1,8 +1,8 @@
 package feature.auth.data.response
 
-import company.data.CompanyResponse
+import feature.company.data.CompanyResponse
 import kotlinx.serialization.Serializable
-import user.data.model.UserResponse
+import feature.user.data.response.UserResponse
 
 @Serializable
 data class SignUpResponse(

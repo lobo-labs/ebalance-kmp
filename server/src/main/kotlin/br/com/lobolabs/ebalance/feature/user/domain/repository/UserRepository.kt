@@ -1,7 +1,7 @@
 package br.com.lobolabs.ebalance.feature.user.domain.repository
 
 import br.com.lobolabs.ebalance.feature.user.data.database.UserDao
-import user.data.model.request.UserRequest
+import feature.user.data.request.UserRequest
 
 interface UserRepository {
     suspend fun addUser(

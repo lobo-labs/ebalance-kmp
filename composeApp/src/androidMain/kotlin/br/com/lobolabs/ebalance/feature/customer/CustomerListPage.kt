@@ -19,8 +19,8 @@ import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.feature.customer.CustomerListItem
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import customer.CustomerFactory
-import customer.domain.Customer
+import feature.customer.domain.CustomerFactory
+import feature.customer.domain.model.Customer
 
 @Composable
 fun CustomerListPage(

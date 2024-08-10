@@ -1,6 +1,6 @@
 package br.com.lobolabs.ebalance.security.data
 
-import user.data.common.UserType
+import feature.user.data.common.UserType
 import io.ktor.server.auth.jwt.*
 
 data class JwtData(

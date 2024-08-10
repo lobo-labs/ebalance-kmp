@@ -12,8 +12,8 @@ import common.CompanyRegime
 import common.CompanySpecialRegime
 import common.CompanyStatus
 import common.CompanyTaxInfo
-import company.data.CompanyReferenceResponse
-import company.data.CompanyResponse
+import feature.company.data.CompanyReferenceResponse
+import feature.company.data.CompanyResponse
 import java.util.Base64
 
 fun List<CompanyDao>.mapToCompanyListResponse(): List<CompanyResponse> {

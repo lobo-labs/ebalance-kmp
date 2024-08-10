@@ -7,7 +7,7 @@ object AppColors {
     object Common {
         val Black = Color(0x00000000)
         val White = Color(0xFFFFFFFF)
-        val Red = Color(0xFFF44336)
+        val Red = Color(0xFFFF0000)
     }
 
     object Green {

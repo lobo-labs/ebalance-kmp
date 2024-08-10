@@ -5,7 +5,7 @@ import br.com.lobolabs.ebalance.feature.cashin.data.database.CashInDao
 import br.com.lobolabs.ebalance.feature.cashin.data.database.CashInTable
 import br.com.lobolabs.ebalance.feature.cashin.domain.CashInRepository
 import br.com.lobolabs.ebalance.feature.sale.SaleTable
-import cashin.data.CreateCashInRequest
+import feature.cashin.data.request.CreateCashInRequest
 import org.ktorm.database.Database
 import org.ktorm.dsl.*
 import org.ktorm.entity.filter

@@ -17,7 +17,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.R
-import br.com.lobolabs.ebalance.core.presentation.dskit.component.header.AppHeader
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 
 @Composable
@@ -50,7 +49,7 @@ fun CardImage(
 fun CardImagePreview() {
     AppTheme {
         CardImage(
-            imageId = R.drawable.ic_user
+            imageId = R.drawable.ic_person
         )
     }
 }

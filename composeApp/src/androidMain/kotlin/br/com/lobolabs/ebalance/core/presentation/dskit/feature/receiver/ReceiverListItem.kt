@@ -18,8 +18,8 @@ import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.image.CardImage
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.text.AppSubtitleText
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import receiver.ReceiverFactory
-import receiver.domain.Receiver
+import feature.receiver.ReceiverFactory
+import feature.receiver.domain.Receiver
 
 
 @Composable
@@ -49,7 +49,7 @@ fun ReceiverListItem(
                 .padding(bottom = 8.dp)
         ) {
             CardImage(
-                imageId = R.drawable.ic_user_group,
+                imageId = R.drawable.ic_group,
                 modifier = Modifier.padding(start = 16.dp, top = 16.dp)
             )
             Column(
@@ -61,11 +61,15 @@ fun ReceiverListItem(
                     text = receiver.name,
                     isBold = true,
                     textColor = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(end = 8.dp, top = 8.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(end = 8.dp, top = 8.dp)
                 )
                 AppSubtitleText(
                     text = receiver.phone ?: "Telefone não informado",
-                    modifier = Modifier.padding(end = 8.dp, top = 4.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(end = 8.dp, top = 4.dp)
                 )
             }
         }

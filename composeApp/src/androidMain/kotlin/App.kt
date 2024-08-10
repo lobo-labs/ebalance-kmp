@@ -8,14 +8,25 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 import br.com.lobolabs.ebalance.core.presentation.util.navigation.AppScreens
+import br.com.lobolabs.ebalance.feature.contract.core.contractModule
+import br.com.lobolabs.ebalance.feature.login.core.signInModule
 import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.koin.core.context.startKoin
 
 @Composable
 @Preview
 fun App(
     navController: NavHostController = rememberNavController()
 ) {
+    startKoin {
+        modules(
+            signInModule,
+            contractModule
+        )
+    }
+
     AppTheme {
+
         Scaffold { innerPadding ->
             NavHost(
                 modifier = Modifier.padding(innerPadding),

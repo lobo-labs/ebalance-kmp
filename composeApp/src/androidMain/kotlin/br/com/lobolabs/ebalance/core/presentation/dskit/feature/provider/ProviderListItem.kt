@@ -19,15 +19,15 @@ import br.com.lobolabs.ebalance.core.presentation.dskit.component.image.CardImag
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.text.AppSubtitleText
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 import feature.provider.ProviderFactory
-import feature.provider.domain.Provider
+import feature.provider.domain.ProviderModel
 
 
 @Composable
 fun ProviderListItem(
     modifier: Modifier = Modifier,
-    onItemClick: (Provider) -> Unit,
+    onItemClick: (ProviderModel) -> Unit,
     isSelected: Boolean = false,
-    provider: Provider
+    provider: ProviderModel
 ) {
     Card(
         modifier = modifier.fillMaxWidth(),

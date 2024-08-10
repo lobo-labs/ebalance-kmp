@@ -4,9 +4,12 @@
     <string name="home">Início</string>
     <string name="sales">Vendas</string>
     <string name="expenses">Despesas</string>
+    <string name="services">Serviços</string>
     <string name="customers">Clientes</string>
     <string name="receivers">Destinatários</string>
     <string name="providers">Fornecedores</string>
+    <string name="contracts">Contratos</string>
+    <string name="users">Usuários</string>
     <string name="menu">Menu</string>
 
     <string name="sale_customer"><![CDATA[<b>Cliente:</b> %s]]></string>

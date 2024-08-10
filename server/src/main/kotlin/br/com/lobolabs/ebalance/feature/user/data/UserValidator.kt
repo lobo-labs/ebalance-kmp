@@ -5,7 +5,7 @@ import core.ApiStatus
 import core.AppError
 import core.AppErrorCode
 import io.ktor.http.HttpStatusCode
-import user.data.model.request.UserRequest
+import feature.user.data.request.UserRequest
 
 object UserValidator {
     fun isValid(request: UserRequest): ApiStatus<String> {

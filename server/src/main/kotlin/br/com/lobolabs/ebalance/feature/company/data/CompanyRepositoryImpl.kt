@@ -5,7 +5,7 @@ import br.com.lobolabs.ebalance.feature.relation.data.database.CompanyUserRelati
 import br.com.lobolabs.ebalance.feature.company.CompanyDao
 import br.com.lobolabs.ebalance.feature.company.CompanyTable
 import common.CompanyStatus
-import company.data.CompanyRequest
+import feature.company.data.CreateCompanyRequest
 import org.ktorm.database.Database
 import org.ktorm.dsl.delete
 import org.ktorm.dsl.eq
@@ -24,7 +24,7 @@ class CompanyRepositoryImpl(
     private val database: Database
 ) : CompanyRepository {
 
-    override suspend fun create(companyRequest: CompanyRequest): Long {
+    override suspend fun create(companyRequest: CreateCompanyRequest): Long {
         return database.insertAndGenerateKey(CompanyTable) {
             // set(it.picture, null) TODO check
             set(it.displayName, companyRequest.name)
@@ -94,7 +94,7 @@ class CompanyRepositoryImpl(
         } > 0
     }
 
-    override suspend fun update(companyId: Long, companyRequest: CompanyRequest): Boolean {
+    override suspend fun update(companyId: Long, companyRequest: CreateCompanyRequest): Boolean {
         return database.update(CompanyTable) {
             set(it.displayName, companyRequest.name)
             set(it.cnpj, companyRequest.data.cnpj)

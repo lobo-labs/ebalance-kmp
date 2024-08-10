@@ -2,7 +2,7 @@ package br.com.lobolabs.ebalance.feature.cashin.domain
 
 import br.com.lobolabs.ebalance.core.data.model.DateFilter
 import br.com.lobolabs.ebalance.feature.cashin.data.database.CashInDao
-import cashin.data.CreateCashInRequest
+import feature.cashin.data.request.CreateCashInRequest
 
 interface CashInRepository {
     suspend fun create(request: CreateCashInRequest): Long

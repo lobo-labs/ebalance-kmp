@@ -6,14 +6,14 @@ import common.CompanyAddress
 import common.CompanyCnae
 import common.CompanyData
 import common.CompanyTaxInfo
-import company.data.CompanyRequest
+import feature.company.data.CreateCompanyRequest
 import core.ApiStatus
 import core.AppError
 import core.AppErrorCode
 import io.ktor.http.HttpStatusCode
 
 object CompanyValidator {
-    fun isValid(request: CompanyRequest): ApiStatus<String> {
+    fun isValid(request: CreateCompanyRequest): ApiStatus<String> {
 
         if (request.name.isEmpty()) {
             return ApiStatus.Error(

@@ -7,8 +7,8 @@ import br.com.lobolabs.ebalance.feature.user.domain.repository.UserRepository
 import br.com.lobolabs.ebalance.feature.user.domain.usecase.GetUserByEmailUseCase
 import br.com.lobolabs.ebalance.feature.user.domain.usecase.GetUserByEmailUseCaseImpl
 import org.koin.dsl.module
-import user.domain.mapper.UserMapper
-import user.domain.mapper.UserMapperImpl
+import feature.user.domain.mapper.UserMapper
+import feature.user.domain.mapper.UserMapperImpl
 
 val userModule = module {
     single<UserMapper> { UserMapperImpl() }

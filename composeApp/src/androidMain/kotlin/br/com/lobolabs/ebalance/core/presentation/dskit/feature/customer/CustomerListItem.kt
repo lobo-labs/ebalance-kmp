@@ -18,8 +18,8 @@ import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.image.CardImage
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.text.AppSubtitleText
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import customer.CustomerFactory
-import customer.domain.Customer
+import feature.customer.domain.CustomerFactory
+import feature.customer.domain.model.Customer
 
 
 @Composable
@@ -48,7 +48,7 @@ fun CustomerListItem(
                 .padding(bottom = 8.dp)
         ) {
             CardImage(
-                imageId = R.drawable.ic_user,
+                imageId = R.drawable.ic_person,
                 modifier = Modifier.padding(start = 16.dp, top = 16.dp)
             )
             Column(
@@ -60,11 +60,11 @@ fun CustomerListItem(
                     text = customer.name,
                     isBold = true,
                     textColor = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.padding(end = 8.dp, top = 8.dp)
+                    modifier = Modifier.fillMaxWidth().padding(top = 8.dp)
                 )
                 AppSubtitleText(
                     text = customer.cnpj ?: "CNPJ não informado",
-                    modifier = Modifier.padding(end = 8.dp, top = 4.dp)
+                    modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
                 )
             }
         }

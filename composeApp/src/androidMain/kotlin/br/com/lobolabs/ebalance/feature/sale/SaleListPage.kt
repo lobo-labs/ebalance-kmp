@@ -20,13 +20,13 @@ import androidx.compose.ui.unit.dp
 import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.feature.sale.SaleListItem
 import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
-import sale.SaleFactory
-import sale.domain.Sale
+import feature.sale.SaleFactory
+import feature.sale.domain.SaleModel
 
 @Composable
 fun SaleListPage(
-    sales: List<Sale>,
-    onItemClick: (Sale) -> Unit,
+    sales: List<SaleModel>,
+    onItemClick: (SaleModel) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Scaffold(

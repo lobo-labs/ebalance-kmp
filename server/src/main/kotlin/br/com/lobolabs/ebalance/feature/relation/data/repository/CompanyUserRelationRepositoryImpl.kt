@@ -1,6 +1,6 @@
 package br.com.lobolabs.ebalance.feature.relation.data.repository
 
-import feature.relation.data.database.CompanyUserRelationDao
+import br.com.lobolabs.ebalance.feature.relation.data.database.CompanyUserRelationDao
 import br.com.lobolabs.ebalance.feature.relation.data.database.CompanyUserRelationTable
 import br.com.lobolabs.ebalance.feature.relation.domain.repository.CompanyUserRelationRepository
 import feature.relation.data.model.RelationType

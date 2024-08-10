@@ -7,8 +7,8 @@ import br.com.lobolabs.ebalance.feature.user.data.database.UserTable
 import org.ktorm.database.Database
 import org.ktorm.dsl.*
 import org.ktorm.support.postgresql.ilike
-import user.data.common.UserType
-import user.data.model.request.UserRequest
+import feature.user.data.common.UserType
+import feature.user.data.request.UserRequest
 
 class UserRepositoryImpl(private val database: Database) : UserRepository {
 

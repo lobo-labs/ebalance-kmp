@@ -22,6 +22,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import br.com.lobolabs.ebalance.R
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.card.AppCardOutline
 import br.com.lobolabs.ebalance.core.presentation.dskit.component.card.AppCardPrimary
@@ -33,7 +34,8 @@ import br.com.lobolabs.ebalance.core.presentation.util.AppTheme
 
 @Composable
 fun HomePage(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavHostController? = null
 ) {
     Column(
         modifier = modifier
@@ -140,13 +142,20 @@ fun HomePage(
                     )
                     Column(
                         modifier = Modifier
+                            .fillMaxWidth()
                             .padding(8.dp)
                     ) {
-                        AppSubtitleText(text = "A Receber")
+                        AppSubtitleText(
+                            text = "A Receber",
+                            modifier = Modifier
+                                .fillMaxWidth()
+                        )
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colorScheme.primary
+                            textColor = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier
+                                .fillMaxWidth()
                         )
                     }
                 }
@@ -170,11 +179,17 @@ fun HomePage(
                         modifier = Modifier
                             .padding(8.dp)
                     ) {
-                        AppSubtitleText(text = "A Pagar")
+                        AppSubtitleText(
+                            text = "A Pagar",
+                            modifier = Modifier
+                                .fillMaxWidth()
+                        )
                         AppSubtitleText(
                             text = "R$ 5.000,00",
                             isBold = true,
-                            textColor = MaterialTheme.colorScheme.primary
+                            textColor = MaterialTheme.colorScheme.primary,
+                            modifier = Modifier
+                                .fillMaxWidth()
                         )
                     }
                 }
@@ -294,7 +309,7 @@ fun HomePage(
                     horizontalAlignment = Alignment.Start
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.ic_user),
+                        painter = painterResource(id = R.drawable.ic_person),
                         colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
                         contentDescription = "",
                         modifier = Modifier.size(32.dp)
@@ -322,7 +337,7 @@ fun HomePage(
                     horizontalAlignment = Alignment.Start
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.ic_user_group),
+                        painter = painterResource(id = R.drawable.ic_group),
                         colorFilter = ColorFilter.tint(color = MaterialTheme.colorScheme.secondary),
                         contentDescription = "",
                         modifier = Modifier.size(32.dp)
